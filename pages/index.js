@@ -1,6 +1,9 @@
 const Home = () => {
     return (
-        <h1>Getting consistency!!!</h1>
+        <div>
+            <h1>Uma flor pra outra flor</h1>
+            <img src="../assets/cat.jpg" />
+        </div>
     )
 }
 
