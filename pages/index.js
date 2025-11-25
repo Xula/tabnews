@@ -1,6 +1,6 @@
 const Home = () => {
     return (
-        <h1>The beggining of studies.</h1>
+        <h1>Getting consistency!!!</h1>
     )
 }
 
