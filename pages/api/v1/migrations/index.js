@@ -36,7 +36,7 @@ const migrations = async (request, response) => {
     }
     return response.status(200).json(migrationsDone);
   }
-
+  // await dbClient.end();
   return response.status(405);
 };
 
