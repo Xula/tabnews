@@ -1,7 +1,6 @@
 import migrationsExec from "node-pg-migrate";
 import { join } from "node:path";
 import database from "infra/database";
-import { error } from "node:console";
 
 const migrations = async (request, response) => {
   // const type = {
