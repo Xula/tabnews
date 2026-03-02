@@ -1,4 +1,4 @@
-import { runner as migrationsExec } from "node-pg-migrate";
+import migrationsExec from "node-pg-migrate";
 import { join } from "node:path";
 import database from "infra/database";
 
