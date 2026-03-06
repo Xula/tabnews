@@ -11,6 +11,7 @@ const StatusPage = () => {
     <>
       <h1>Status Page</h1>
       <UpdatedAt />
+      <DatabaseStatus />
     </>
   );
 };
@@ -27,6 +28,32 @@ const UpdatedAt = () => {
   }
 
   return <div>Última Atualização: {statusText}</div>;
+};
+
+const DatabaseStatus = () => {
+  const { isLoading, data } = useSWR("/api/v1/status", fetchAPI, {
+    refreshInterval: 5000,
+  });
+
+  let dbText = "Carregando...";
+
+  if (!isLoading && data) {
+    const dbData = data.dependencies.database;
+    dbText = (
+      <>
+        <div>Versão: {dbData.version}</div>
+        <div>Conexões máximas: {dbData.max_connections}</div>
+        <div>Conexões ativas: {dbData.active_connections}</div>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <h1>Database:</h1>
+      {dbText}
+    </>
+  );
 };
 
 export default StatusPage;
